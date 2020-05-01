@@ -1,0 +1,57 @@
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeMap;
+
+public class program {
+	
+	public static void printMap(Map<String, Set<String>> map) {
+		map.forEach((k,v) -> System.out.println(k + " -> " + v ));
+	}
+
+	public static void main(String[] args) {
+		Scanner reader = new Scanner(System.in);
+		String str = reader.nextLine();
+		Set<String> synonym = new HashSet<>();
+		
+
+		Map<String, Set<String>> map = new TreeMap<>();
+		synonym.add("Good Morning");
+		synonym.add("Shubhodaya");
+		synonym.add("Shubhoday");
+		synonym.add("Bonjour");
+		map.put("Good Morning", synonym);
+		
+		if(str.isEmpty()) {
+			printMap(map);
+			return;
+		}
+		if(!map.containsKey(str)) {
+			System.out.println("No such word found. Would you like to add it to the dictionary ? (Y/N)");
+			char resp = reader.next().charAt(0);
+			if(resp == 'Y') {
+				Set<String> userSynonym = new HashSet<>();
+				System.out.println("Please enter the synonym ");
+				String syn = null;
+				reader.nextLine();
+				while(true) {
+					syn = reader.nextLine();
+					if(syn.equals("")) {
+						break;
+					}else {
+						userSynonym.add(syn);
+					}
+				}
+				
+				map.put(str,userSynonym);
+			}
+			
+		}
+		
+		printMap(map);
+		
+				
+	}
+
+}
