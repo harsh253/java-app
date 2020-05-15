@@ -1,0 +1,106 @@
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.TreeMap;
+
+
+public class program {
+	
+	public static ArrayList<Integer> getPrimeArr(){
+		ArrayList<Integer> primeArr = new ArrayList<>();
+		primeArr.add(2);
+		for(int i=3; i<103; i++) {
+			for(int j=2; j<i; j++) {
+				if(i%j == 0) {
+					break;
+				}else if(j==(i-1) && ((i%j)!=0)) {
+					primeArr.add(i);
+				}
+			}
+		}
+		
+		
+		return primeArr;
+	}
+	
+	public static Map<Character, Integer> getMappedCharacters(){
+		
+		ArrayList<Integer> primeArr = getPrimeArr();
+		
+		
+		Map<Character, Integer> m = new TreeMap<>();
+		int a = 65;
+		for(Integer n : primeArr) {
+			m.put((char)a, n);
+			a+=1;
+		}
+		
+		return m;
+		
+	}
+	
+	public static int changeToPrime(char c) {
+		Map<Character, Integer> m = getMappedCharacters();
+		int val = 0;
+		for(Character ch : m.keySet()) {
+			if(ch == c) {
+				val = m.get(ch);
+				break;
+			}
+		}
+		
+		return val;
+	}
+	
+	public static ArrayList<Integer> encode(String s) {
+		char[] charArr = s.toCharArray();
+		
+		ArrayList<Integer> arr = new ArrayList<>();
+		
+		for(int i=0;i<charArr.length; i++) {
+			char a = charArr[i];
+			int primeEquivalent = changeToPrime(a);
+			arr.add((primeEquivalent));
+		}
+		
+		return arr;
+	}
+	
+	public static String changeToHexadecimal(int n) {
+		char hex[] = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+		
+		String res = "";
+		int rem = 0;
+		
+		while(n>0) {
+			rem = n%16;
+			res += (hex[rem]);
+			n = n/16;
+		}
+		
+		return res;
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		Scanner reader = new Scanner(System.in);
+		
+		String input = reader.nextLine().toUpperCase();
+		ArrayList<Integer> primeEncode = new ArrayList<>();
+		primeEncode = encode(input);
+		
+		String res = "";
+		
+		for(Integer n: primeEncode) {
+			res+= changeToHexadecimal(n);
+		}
+		
+		System.out.println(res);
+
+		
+		
+	}
+}
+
+
