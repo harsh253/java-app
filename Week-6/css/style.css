@@ -1,0 +1,29 @@
+.container{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (min-width:786px){
+    .container > p{
+        font-family: "Arial";
+        font-size: 36;
+        color: blue;
+    }
+}
+
+@media only screen and (min-width:300px) and (max-width:786px){
+    .container > p{
+        font-family: "Helvetica";
+        font-size: 24;
+        color: red;
+    }
+}
+
+@media only screen and (min-width:100px) and (max-width:300px){
+    .container > p{
+        font-family: "Courier";
+        font-size: 18;
+        color: purple;
+    }
+}
