@@ -1,0 +1,6 @@
+====== Endpoints ======
+
+export const baseUrl = 'https://example.com';
+export const getBatches = '/home/batch';
+export const login = "/login";
+export const logout = "/logout";
