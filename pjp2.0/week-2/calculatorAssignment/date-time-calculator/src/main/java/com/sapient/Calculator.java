@@ -1,13 +1,7 @@
 package com.sapient;
 
 import java.time.LocalDate;
-
-
 import java.util.Scanner;
-
-import com.sapient.Menu;
-import com.sapient.Operations;
-import com.sapient.Util;
 
 public class Calculator {
 

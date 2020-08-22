@@ -2,8 +2,6 @@ package com.sapient;
 
 import java.util.Scanner;
 
-import com.sapient.Calculator;
-
 public class App {
 
 	public static void main(String[] args) {

@@ -20,6 +20,9 @@ public class History {
 	}
 
 	public void setOperationName(String operationName) {
+		if(operationName == null || operationName == "") {
+			throw new IllegalArgumentException();
+		}
 		this.operationName = operationName;
 	}
 
@@ -28,6 +31,9 @@ public class History {
 	}
 
 	public void setResult(String result) {
+		if(result == null || result == "") {
+			throw new IllegalArgumentException();
+		}
 		this.result = result;
 	}
 
@@ -36,6 +42,9 @@ public class History {
 	}
 
 	public void setManipulator(Integer manipulator) {
+		if(manipulator == null) {
+			throw new IllegalArgumentException();
+		}
 		this.manipulator = manipulator;
 	}
 	
