@@ -32,37 +32,37 @@ public class Operations {
 	
 	public LocalDate addDaysToDate(LocalDate date, int daysToAdd) {
 		LocalDate newDate = date.plusDays(daysToAdd);
-		this.addToHistory("Add n days", newDate, daysToAdd, newDate.toString());
+		this.addToHistory("Add n days", date, daysToAdd, newDate.toString());
 		return newDate;
 	}
 	
 	public LocalDate addMonthsToDate(LocalDate date, Integer monthsToAdd) {
 		LocalDate newDate = date.plusMonths(monthsToAdd);
-		this.addToHistory("Add n months", newDate, monthsToAdd, newDate.toString());
+		this.addToHistory("Add n months", date, monthsToAdd, newDate.toString());
 		return newDate;
 	}
 	
 	public LocalDate addWeeksToDate(LocalDate date, Integer weeksToAdd) {
 		LocalDate newDate = date.plusWeeks(weeksToAdd);
-		this.addToHistory("Add n weeks", newDate, weeksToAdd, newDate.toString());
+		this.addToHistory("Add n weeks", date, weeksToAdd, newDate.toString());
 		return newDate;
 	}
 	
 	public LocalDate subtractDaysFromDate(LocalDate date, Integer daysToSubtract) {
 		LocalDate newDate = date.minusDays(daysToSubtract);
-		this.addToHistory("Subtract n days", newDate, daysToSubtract, newDate.toString());
+		this.addToHistory("Subtract n days", date, daysToSubtract, newDate.toString());
 		return newDate;
 	}
 	
 	public LocalDate subtractMonthsFromDate(LocalDate date, Integer monthsToSubtract) {
 		LocalDate newDate = date.minusMonths(monthsToSubtract);
-		this.addToHistory("Subtract n months", newDate, monthsToSubtract, newDate.toString());
+		this.addToHistory("Subtract n months", date, monthsToSubtract, newDate.toString());
 		return newDate;
 	}
 	
 	public LocalDate subtractWeeksFromDate(LocalDate date, Integer weeksToSubtract) {
 		LocalDate newDate = date.minusWeeks(weeksToSubtract);
-		this.addToHistory("Subtract n weeks", newDate, weeksToSubtract, newDate.toString());
+		this.addToHistory("Subtract n weeks", date, weeksToSubtract, newDate.toString());
 		return newDate;
 	}
 	
