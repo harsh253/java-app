@@ -7,7 +7,7 @@ public class App {
 
 	public static void main(String[] args) {
 		TransactionDAO dao = new TransactionDAO();
-		dao.readTransactionsFromFile("./sampleFiles\\transactions.csv");
+		dao.readTransactionsFromFile("./sampleFiles\\Sample_Data_Fee_Calculator.csv");
 		
 		TransactionBO bo = new TransactionBO();
 		bo.getTotalFees(dao.getAllTransactions());

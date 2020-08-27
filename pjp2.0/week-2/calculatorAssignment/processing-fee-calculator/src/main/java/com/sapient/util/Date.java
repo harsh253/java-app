@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public class Date {
 	
-	public static final String DATE_FORMAT = "MM/dd/yyyy";
+	public static final String DATE_FORMAT = "MM/d/yyyy";
 	
 	public static LocalDate formatDate(String date) {
 		LocalDate ld = null;
